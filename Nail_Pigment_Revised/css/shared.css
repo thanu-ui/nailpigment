@@ -1,0 +1,1768 @@
+/* Shared design tokens and typography only */
+:root {
+    --rose: #E75480;
+    --rose-deep: #C93E6B;
+    --blush: #FFF5F7;
+    --ink: #2B2027;
+    --muted: #796B73;
+    --surface: #FFFFFF;
+    --surface-soft: #FFF0F4;
+    --line: #F0D8E0;
+    --accent: #A96C82;
+    --shadow: 0 18px 55px rgba(151, 67, 99, .09);
+    --radius: 24px;
+    --radius-card: 20px;
+    --radius-control: 14px;
+    --content-width: 1440px
+}
+
+html[data-theme="dark"] {
+    --blush: #171116;
+    --ink: #FFF2F6;
+    --muted: #C3AEB8;
+    --surface: #211820;
+    --surface-soft: #2B1B25;
+    --line: #49303D;
+    --accent: #F3A7C0;
+    --shadow: 0 18px 55px rgba(0, 0, 0, .22)
+}
+
+* {
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px
+}
+
+body {
+    margin: 0;
+    background: var(--blush);
+    color: var(--ink);
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    line-height: 1.7
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.12;
+    font-weight: 600;
+    letter-spacing: -.035em;
+    margin: 0 0 18px
+}
+
+h1 {
+    font-size: clamp(2.7rem, 5.1vw, 5rem)
+}
+
+h2 {
+    font-size: clamp(2rem, 3.5vw, 3.3rem)
+}
+
+h3 {
+    font-size: 1.4rem
+}
+
+p {
+    margin: 0 0 18px;
+    color: var(--muted)
+}
+
+em {
+    color: var(--rose);
+    font-weight: 500
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent
+}
+
+button {
+    cursor: pointer
+}
+
+img {
+    display: block;
+    max-width: 100%
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: .72rem;
+    letter-spacing: .18em;
+    font-weight: 600;
+    color: var(--rose-deep);
+    text-transform: uppercase;
+    margin-bottom: 18px
+}
+
+.eyebrow:before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: currentColor
+}
+
+.btn {
+    min-height: 48px;
+    padding: 12px 22px;
+    border-radius: var(--radius-control);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 1px solid transparent;
+    font-weight: 600;
+    font-size: .87rem;
+    transition: transform .2s, background .2s, border-color .2s
+}
+
+.btn:hover {
+    transform: translateY(-2px)
+}
+
+.btn-primary {
+    background: var(--rose);
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(231, 84, 128, .19)
+}
+
+.btn-primary:hover {
+    background: var(--rose-deep)
+}
+
+.btn-outline {
+    border-color: var(--line);
+    background: var(--surface);
+    color: var(--ink)
+}
+
+.btn-light {
+    background: #fff;
+    color: #6C2C48
+}
+
+.full-width {
+    width: 100%
+}
+
+.text-link {
+    font-weight: 600;
+    color: var(--rose-deep);
+    font-size: .88rem
+}
+
+/* Website brand name and tagline */
+.brand-name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+}
+
+.brand-tagline {
+  display: block;
+  margin-top: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  color: var(--text-color, #9E234E);
+  white-space: nowrap;
+}
+
+/* Footer brand tagline */
+.footer-logo .brand-tagline {
+  font-size: 9px;
+}
+
+/* Mobile adjustment */
+@media (max-width: 480px) {
+  .brand-tagline {
+    font-size: 8px;
+    letter-spacing: 0;
+  }
+}
+
+/* Keep Nail Pigment on one line */
+.brand-name {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 6px;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+/* Keep the tagline on the next line */
+.brand-tagline {
+  flex-basis: 100%;
+  display: block;
+  margin-top: 3px;
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+/* Footer tagline */
+.footer-logo .brand-tagline {
+  font-size: 9px;
+}
+
+/* RTL/LTR toggle arrow color */
+#rtlToggle {
+  color: #9E234E;
+  border-color: #9E234E;
+}
+
+#rtlToggle svg {
+  color: #9E234E;
+  stroke: #9E234E;
+}
+
+/* Hover effect */
+#rtlToggle:hover {
+  color: #FFFFFF;
+  background-color: #9E234E;
+  border-color: #9E234E;
+}
+
+#rtlToggle:hover svg {
+  color: #FFFFFF;
+  stroke: #FFFFFF;
+}
+
+/* Dark mode toggle — Deep Berry Pink hover */
+#themeToggle {
+  transition: background-color 0.3s ease,
+              color 0.3s ease,
+              border-color 0.3s ease;
+}
+
+#themeToggle:hover {
+  background-color: #9E234E;
+  border-color: #9E234E;
+  color: #FFFFFF;
+}
+
+#themeToggle:hover svg {
+  stroke: #FFFFFF;
+}
+
+/* RTL toggle arrows in dark mode */
+html[data-theme="dark"] #rtlToggle {
+  color: #FFFFFF;
+  border-color: #9E234E;
+}
+
+html[data-theme="dark"] #rtlToggle svg {
+  stroke: #FFFFFF;
+}
+
+/* Hover: berry pink background with white arrows */
+html[data-theme="dark"] #rtlToggle:hover {
+  background-color: #9E234E;
+  border-color: #9E234E;
+  color: #FFFFFF;
+}
+
+html[data-theme="dark"] #rtlToggle:hover svg {
+  stroke: #FFFFFF;
+}
+
+/* Footer social icons — Deep Berry Pink border */
+.socials a {
+  border: 1px solid #9E234E;
+  transition: background-color 0.3s ease,
+              border-color 0.3s ease,
+              color 0.3s ease;
+}
+
+/* Icon color */
+.socials a svg {
+  color: #9E234E;
+  stroke: #9E234E;
+}
+
+/* Hover effect */
+.socials a:hover {
+  background-color: #9E234E;
+  border-color: #9E234E;
+}
+
+.socials a:hover svg {
+  color: #FFFFFF;
+  stroke: #FFFFFF;
+}
+
+/* Footer social icons — Deep Berry Pink borders */
+.site-footer .socials a {
+  border: 1px solid #9E234E !important;
+  color: #9E234E;
+}
+
+.site-footer .socials a svg {
+  stroke: #9E234E;
+}
+
+/* Dark mode */
+html[data-theme="dark"] .site-footer .socials a {
+  border-color: #9E234E !important;
+  color: #FFFFFF;
+}
+
+html[data-theme="dark"] .site-footer .socials a svg {
+  stroke: #FFFFFF;
+}
+
+/* Hover in both themes */
+.site-footer .socials a:hover {
+  background-color: #9E234E;
+  border-color: #9E234E !important;
+  color: #FFFFFF;
+}
+
+.site-footer .socials a:hover svg {
+  stroke: #FFFFFF;
+}
+
+/* Keep header and footer branding consistent */
+.site-header .brand,
+.site-footer .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Same logo image size */
+.site-header .brand-logo,
+.site-footer .footer-logo .brand-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Same brand name styling */
+.site-header .brand-name,
+.site-footer .footer-logo .brand-name {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+/* Keep Nail Pigment on one line */
+.site-header .brand-name,
+.site-footer .footer-logo .brand-name {
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 6px;
+  align-items: baseline;
+}
+
+/* Same tagline styling */
+.site-header .brand-tagline,
+.site-footer .footer-logo .brand-tagline {
+  flex-basis: 100%;
+  margin-top: 3px;
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+/* Responsive adjustment */
+@media (max-width: 480px) {
+  .site-header .brand-logo,
+  .site-footer .footer-logo .brand-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .site-header .brand-name,
+  .site-footer .footer-logo .brand-name {
+    font-size: 24px;
+  }
+
+  .site-header .brand-tagline,
+  .site-footer .footer-logo .brand-tagline {
+    font-size: 8px;
+  }
+}
+
+/* Nail Pigment logo — light and dark modes */
+.brand-logo {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  background: transparent;
+  filter: drop-shadow(0 2px 5px rgba(231, 84, 128, 0.16));
+}
+
+/* Keep the pink logo visible in dark mode */
+html[data-theme="dark"] .brand-logo,
+body[data-theme="dark"] .brand-logo {
+  background: transparent;
+  filter: drop-shadow(0 0 8px rgba(231, 84, 128, 0.25));
+}
+
+/* =========================================
+   NAIL PIGMENT — SHARED GLASS SIGNATURE
+========================================= */
+
+.eyebrow,
+.hero-eyebrow,
+.contact-editorial-eyebrow,
+.contact-v2-eyebrow,
+.gallery-hero-eyebrow,
+.offers-eyebrow,
+.services-hero-badge,
+.nail-process-eyebrow {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    width: fit-content;
+    max-width: 100%;
+    padding: 8px 13px;
+    border: 1px solid rgba(231, 84, 128, 0.20);
+    border-radius: 999px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.72),
+        rgba(255, 230, 238, 0.38)
+    );
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.92),
+        0 5px 18px rgba(201, 62, 107, 0.055);
+
+    color: var(--rose-deep);
+    font-family: "Poppins", sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.17em;
+    line-height: 1.5;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+/* Thin signature lines */
+.eyebrow::before,
+.eyebrow::after,
+.hero-eyebrow::before,
+.hero-eyebrow::after,
+.contact-editorial-eyebrow::before,
+.contact-editorial-eyebrow::after,
+.contact-v2-eyebrow::before,
+.contact-v2-eyebrow::after,
+.gallery-hero-eyebrow::before,
+.gallery-hero-eyebrow::after,
+.offers-eyebrow::before,
+.offers-eyebrow::after,
+.services-hero-badge::before,
+.services-hero-badge::after,
+.nail-process-eyebrow::before,
+.nail-process-eyebrow::after {
+    content: "";
+    display: block;
+    flex: 0 0 22px;
+    width: 22px;
+    height: 1px;
+    background: var(--rose);
+    opacity: 0.9;
+}
+
+/* Gentle shine when hovered */
+.eyebrow,
+.hero-eyebrow,
+.contact-editorial-eyebrow,
+.contact-v2-eyebrow,
+.gallery-hero-eyebrow,
+.offers-eyebrow,
+.services-hero-badge,
+.nail-process-eyebrow {
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.eyebrow:hover,
+.hero-eyebrow:hover,
+.contact-editorial-eyebrow:hover,
+.contact-v2-eyebrow:hover,
+.gallery-hero-eyebrow:hover,
+.offers-eyebrow:hover,
+.services-hero-badge:hover,
+.nail-process-eyebrow:hover {
+    border-color: rgba(231, 84, 128, 0.42);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.95),
+        0 7px 22px rgba(201, 62, 107, 0.10);
+}
+
+/* Dark mode */
+html[data-theme="dark"] .eyebrow,
+html[data-theme="dark"] .hero-eyebrow,
+html[data-theme="dark"] .contact-editorial-eyebrow,
+html[data-theme="dark"] .contact-v2-eyebrow,
+html[data-theme="dark"] .gallery-hero-eyebrow,
+html[data-theme="dark"] .offers-eyebrow,
+html[data-theme="dark"] .services-hero-badge,
+html[data-theme="dark"] .nail-process-eyebrow,
+body[data-theme="dark"] .eyebrow,
+body[data-theme="dark"] .hero-eyebrow,
+body[data-theme="dark"] .contact-editorial-eyebrow,
+body[data-theme="dark"] .contact-v2-eyebrow,
+body[data-theme="dark"] .gallery-hero-eyebrow,
+body[data-theme="dark"] .offers-eyebrow,
+body[data-theme="dark"] .services-hero-badge,
+body[data-theme="dark"] .nail-process-eyebrow {
+    color: #F3A7C0;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.09),
+        rgba(231, 84, 128, 0.10)
+    );
+    border-color: rgba(243, 167, 192, 0.24);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.10),
+        0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme="dark"] .eyebrow::before,
+html[data-theme="dark"] .eyebrow::after,
+html[data-theme="dark"] .hero-eyebrow::before,
+html[data-theme="dark"] .hero-eyebrow::after,
+html[data-theme="dark"] .contact-editorial-eyebrow::before,
+html[data-theme="dark"] .contact-editorial-eyebrow::after,
+html[data-theme="dark"] .contact-v2-eyebrow::before,
+html[data-theme="dark"] .contact-v2-eyebrow::after,
+html[data-theme="dark"] .gallery-hero-eyebrow::before,
+html[data-theme="dark"] .gallery-hero-eyebrow::after,
+html[data-theme="dark"] .offers-eyebrow::before,
+html[data-theme="dark"] .offers-eyebrow::after,
+html[data-theme="dark"] .services-hero-badge::before,
+html[data-theme="dark"] .services-hero-badge::after,
+html[data-theme="dark"] .nail-process-eyebrow::before,
+html[data-theme="dark"] .nail-process-eyebrow::after {
+    background: #F3A7C0;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .eyebrow,
+    .hero-eyebrow,
+    .contact-editorial-eyebrow,
+    .contact-v2-eyebrow,
+    .gallery-hero-eyebrow,
+    .offers-eyebrow,
+    .services-hero-badge,
+    .nail-process-eyebrow {
+        gap: 7px;
+        padding: 7px 10px;
+        font-size: 0.59rem;
+        letter-spacing: 0.11em;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after,
+    .hero-eyebrow::before,
+    .hero-eyebrow::after,
+    .contact-editorial-eyebrow::before,
+    .contact-editorial-eyebrow::after,
+    .contact-v2-eyebrow::before,
+    .contact-v2-eyebrow::after,
+    .gallery-hero-eyebrow::before,
+    .gallery-hero-eyebrow::after,
+    .offers-eyebrow::before,
+    .offers-eyebrow::after,
+    .services-hero-badge::before,
+    .services-hero-badge::after,
+    .nail-process-eyebrow::before,
+    .nail-process-eyebrow::after {
+        flex-basis: 14px;
+        width: 14px;
+    }
+}
+
+/* ==========================================
+   NAIL PIGMENT — SHARED PREMIUM CTA CARDS
+   Contact · Gallery · Offers · Services
+========================================== */
+
+body[data-page="contact"] .cta-band,
+body[data-page="gallery"] .cta-band,
+body[data-page="offers"] .offers-final-cta,
+body[data-page="services"] .services-cta {
+  position: relative;
+  isolation: isolate;
+  width: calc(100% - 80px);
+  max-width: 1500px;
+  margin: 64px auto 76px;
+  padding: 46px clamp(28px, 5vw, 68px);
+  box-sizing: border-box;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+
+  border: 1px solid rgba(231, 84, 128, 0.22);
+  border-radius: 26px;
+
+  background:
+    radial-gradient(
+      circle at 88% 15%,
+      rgba(231, 84, 128, 0.15),
+      transparent 34%
+    ),
+    linear-gradient(115deg, #F9D8E4 0%, #FFF0F5 52%, #F7D0DF 100%);
+
+  box-shadow: 0 16px 40px rgba(158, 35, 78, 0.09);
+}
+
+/* Keep CTA content above its decoration */
+body[data-page="contact"] .cta-band > *,
+body[data-page="gallery"] .cta-band > *,
+body[data-page="offers"] .offers-final-cta-inner,
+body[data-page="services"] .services-cta > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Text */
+body[data-page="contact"] .cta-band h2,
+body[data-page="gallery"] .cta-band h2,
+body[data-page="offers"] .offers-final-cta h2,
+body[data-page="services"] .services-cta h2 {
+  margin: 14px 0 10px;
+  color: #351F2A;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(30px, 3.5vw, 48px);
+  line-height: 1.15;
+}
+
+body[data-page="contact"] .cta-band p,
+body[data-page="gallery"] .cta-band p,
+body[data-page="offers"] .offers-final-cta p,
+body[data-page="services"] .services-cta p {
+  margin: 0;
+  color: #765866;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.8;
+}
+
+/* Eyebrow */
+body[data-page="contact"] .cta-band .eyebrow,
+body[data-page="gallery"] .cta-band .eyebrow,
+body[data-page="offers"] .offers-final-cta .offers-eyebrow,
+body[data-page="services"] .services-cta .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px;
+  border: 1px solid rgba(231, 84, 128, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  color: #C9366B;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+}
+
+/* Appointment buttons */
+body[data-page="contact"] .cta-band .btn,
+body[data-page="gallery"] .cta-band .btn,
+body[data-page="offers"] .offers-final-cta .offers-btn,
+body[data-page="services"] .services-cta .cta-button {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 15px 26px;
+  border: 1px solid #E75480;
+  border-radius: 13px;
+  background: #E75480;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: normal;
+  box-shadow: 0 10px 22px rgba(231, 84, 128, 0.18);
+  transition: background 0.25s ease, transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+body[data-page="contact"] .cta-band .btn:hover,
+body[data-page="gallery"] .cta-band .btn:hover,
+body[data-page="offers"] .offers-final-cta .offers-btn:hover,
+body[data-page="services"] .services-cta .cta-button:hover {
+  background: #C9366B;
+  border-color: #C9366B;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(158, 35, 78, 0.2);
+}
+
+/* Offers CTA uses centered inner content in the original HTML */
+body[data-page="offers"] .offers-final-cta {
+  text-align: left;
+}
+
+body[data-page="offers"] .offers-final-cta-inner {
+  width: 100%;
+}
+
+body[data-page="offers"] .offers-final-cta small {
+  display: block;
+  margin-top: 12px;
+  color: #765866;
+  font-size: 12px;
+}
+
+/* Decorative sparkle */
+body[data-page="services"] .services-cta .cta-decoration {
+  position: absolute;
+  z-index: 0;
+  right: 25%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(231, 84, 128, 0.22);
+  font-size: clamp(80px, 9vw, 130px);
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* Dark mode */
+html[data-theme="dark"] body[data-page="contact"] .cta-band,
+html[data-theme="dark"] body[data-page="gallery"] .cta-band,
+html[data-theme="dark"] body[data-page="offers"] .offers-final-cta,
+html[data-theme="dark"] body[data-page="services"] .services-cta {
+  background:
+    radial-gradient(circle at 88% 15%, rgba(231,84,128,.13), transparent 34%),
+    linear-gradient(115deg, #351B29, #482333 55%, #3B202F);
+  border-color: rgba(231, 84, 128, 0.28);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+}
+
+html[data-theme="dark"] body[data-page="contact"] .cta-band h2,
+html[data-theme="dark"] body[data-page="gallery"] .cta-band h2,
+html[data-theme="dark"] body[data-page="offers"] .offers-final-cta h2,
+html[data-theme="dark"] body[data-page="services"] .services-cta h2 {
+  color: #FFF1F6;
+}
+
+html[data-theme="dark"] body[data-page="contact"] .cta-band p,
+html[data-theme="dark"] body[data-page="gallery"] .cta-band p,
+html[data-theme="dark"] body[data-page="offers"] .offers-final-cta p,
+html[data-theme="dark"] body[data-page="services"] .services-cta p,
+html[data-theme="dark"] body[data-page="offers"] .offers-final-cta small {
+  color: #E8C8D5;
+}
+
+/* Tablet and mobile */
+@media (max-width: 760px) {
+  body[data-page="contact"] .cta-band,
+  body[data-page="gallery"] .cta-band,
+  body[data-page="offers"] .offers-final-cta,
+  body[data-page="services"] .services-cta {
+    width: calc(100% - 32px);
+    margin: 42px auto 24px;
+    padding: 32px 24px;
+    border-radius: 21px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  body[data-page="contact"] .cta-band h2,
+  body[data-page="gallery"] .cta-band h2,
+  body[data-page="offers"] .offers-final-cta h2,
+  body[data-page="services"] .services-cta h2 {
+    font-size: clamp(29px, 7vw, 38px);
+  }
+
+  body[data-page="services"] .services-cta .cta-decoration {
+    right: 10px;
+    top: 25px;
+    transform: none;
+    font-size: 70px;
+  }
+}
+
+@media (max-width: 420px) {
+  body[data-page="contact"] .cta-band,
+  body[data-page="gallery"] .cta-band,
+  body[data-page="offers"] .offers-final-cta,
+  body[data-page="services"] .services-cta {
+    width: calc(100% - 24px);
+    padding: 27px 19px;
+  }
+
+  body[data-page="contact"] .cta-band .btn,
+  body[data-page="gallery"] .cta-band .btn,
+  body[data-page="offers"] .offers-final-cta .offers-btn,
+  body[data-page="services"] .services-cta .cta-button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* Keep Nail Pigment order and consistent alignment in RTL */
+html[dir="rtl"] .site-header .brand,
+html[dir="rtl"] .site-footer .brand {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+}
+
+/* Keep logo image and brand name aligned */
+html[dir="rtl"] .site-header .brand-logo,
+html[dir="rtl"] .site-footer .brand-logo {
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+html[dir="rtl"] .site-header .brand-name,
+html[dir="rtl"] .site-footer .brand-name {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-start;
+  text-align: left !important;
+  white-space: nowrap;
+}
+
+/* Preserve the exact word order */
+html[dir="rtl"] .site-header .brand-name > span,
+html[dir="rtl"] .site-header .brand-name > b,
+html[dir="rtl"] .site-footer .brand-name > span,
+html[dir="rtl"] .site-footer .brand-name > b {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}
+
+/* Keep footer tagline below the brand name */
+html[dir="rtl"] .site-footer .brand-tagline {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  text-align: left;
+}
+
+/* ==========================================
+   NAIL PIGMENT — CONSISTENT BUTTON SHAPES
+   Apply across the entire website
+========================================== */
+
+:root {
+  --button-radius: 12px;
+}
+
+/* All common buttons and button-style links */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.btn,
+a.btn,
+.btn-primary,
+.btn-secondary,
+.btn-light,
+.btn-outline,
+button[class*="btn-"],
+a[class*="btn-"],
+.text-action,
+.gallery-hero-button,
+.gallery-lightbox__close,
+.gallery-lightbox__arrow,
+.filter-btn,
+.choice-btn,
+.palette-close,
+.reset-vibe,
+.vibe-submit,
+.cta-band a,
+.cta-band button,
+.gallery-card-actions a,
+.gallery-card-actions button,
+.site-header a[class*="appointment"],
+.site-header button {
+  border-radius: var(--button-radius) !important;
+}
+
+/* Keep circular icon-only controls circular */
+.theme-toggle,
+.rtl-toggle,
+.socials a,
+.social-links a,
+button[aria-label="Close image preview"],
+button[aria-label="Previous image"],
+button[aria-label="Next image"] {
+  border-radius: 50% !important;
+}
+
+/* ==========================================
+   NAIL PIGMENT — MATCH HEADER & FOOTER BRAND
+========================================== */
+
+/* Keep the logo image and brand text aligned */
+.site-header .brand,
+.site-footer .footer-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  direction: ltr !important;
+  text-align: left;
+  width: fit-content;
+  max-width: 100%;
+}
+
+/* Consistent logo image size */
+.site-header .brand-logo,
+.site-footer .footer-logo .brand-logo {
+  display: block;
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  object-fit: contain;
+}
+
+/* Brand name and tagline wrapper */
+.site-header .brand-name,
+.site-footer .footer-logo .brand-name {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-start;
+  column-gap: 6px;
+  width: max-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  white-space: normal;
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* Keep the complete website name on one line */
+.site-header .brand-name > span,
+.site-header .brand-name > b,
+.site-footer .footer-logo .brand-name > span,
+.site-footer .footer-logo .brand-name > b {
+  display: inline;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+/* Put the tagline below the complete name */
+.site-header .brand-tagline,
+.site-footer .footer-logo .brand-tagline {
+  display: block;
+  flex: 0 0 100%;
+  width: 100%;
+  margin: 3px 0 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
+  white-space: normal;
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* Do not reverse the brand when RTL is enabled */
+html[dir="rtl"] .site-header .brand,
+html[dir="rtl"] .site-footer .footer-logo {
+  direction: ltr !important;
+}
+
+/* Mobile sizing */
+@media (max-width: 480px) {
+  .site-header .brand-logo,
+  .site-footer .footer-logo .brand-logo {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+  }
+
+  .site-header .brand-name,
+  .site-footer .footer-logo .brand-name {
+    font-size: 24px;
+  }
+
+  .site-header .brand-tagline,
+  .site-footer .footer-logo .brand-tagline {
+    font-size: 8px;
+  }
+}
+
+
+/* ==========================================
+   NAIL PIGMENT — MATCH HEADER & FOOTER BRAND
+========================================== */
+
+/* Keep logo and website name consistent */
+.site-header .brand,
+.site-header .brand,
+.site-footer .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Same logo size in header and footer */
+.site-header .brand-logo,
+.site-footer .footer-logo .brand-logo {
+  display: block;
+  width: 64px !important;
+  height: 64px !important;
+  min-width: 64px;
+  max-width: 64px;
+  flex: 0 0 64px;
+  object-fit: contain;
+  margin: 0;
+}
+
+/* Same website name size */
+.site-header .brand-name,
+.site-footer .footer-logo .brand-name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 5px;
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 28px !important;
+  font-weight: 600;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+/* Keep name parts the same size */
+.site-header .brand-name > span,
+.site-header .brand-name > b,
+.site-footer .footer-logo .brand-name > span,
+.site-footer .footer-logo .brand-name > b {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Same tagline size and position */
+.site-header .brand-tagline,
+.site-footer .footer-logo .brand-tagline {
+  display: block;
+  flex: 0 0 100%;
+  width: 100%;
+  margin: 3px 0 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 9px !important;
+  font-weight: 400;
+  line-height: 1.4;
+  white-space: normal;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .site-header .brand-logo,
+  .site-footer .footer-logo .brand-logo {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px;
+    max-width: 56px;
+    flex-basis: 56px;
+  }
+
+  .site-header .brand-name,
+  .site-footer .footer-logo .brand-name {
+    font-size: 24px !important;
+  }
+
+  .site-header .brand-tagline,
+  .site-footer .footer-logo .brand-tagline {
+    font-size: 8px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .site-header .brand,
+  .site-footer .footer-logo {
+    gap: 7px;
+  }
+
+  .site-header .brand-logo,
+  .site-footer .footer-logo .brand-logo {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px;
+    max-width: 48px;
+    flex-basis: 48px;
+  }
+
+  .site-header .brand-name,
+  .site-footer .footer-logo .brand-name {
+    font-size: 21px !important;
+    column-gap: 4px;
+  }
+
+  .site-header .brand-tagline,
+  .site-footer .footer-logo .brand-tagline {
+    font-size: 7px !important;
+  }
+}
+
+/* Extra-small mobile */
+@media (max-width: 360px) {
+  .site-header .brand,
+  .site-footer .footer-logo {
+    gap: 5px;
+  }
+
+  .site-header .brand-logo,
+  .site-footer .footer-logo .brand-logo {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px;
+    max-width: 42px;
+    flex-basis: 42px;
+  }
+
+  .site-header .brand-name,
+  .site-footer .footer-logo .brand-name {
+    font-size: 18px !important;
+  }
+
+  .site-header .brand-tagline,
+  .site-footer .footer-logo .brand-tagline {
+    font-size: 6.5px !important;
+  }
+}
+
+/* RTL: preserve brand order without hard-coded shifting */
+html[dir="rtl"] #site-header .brand,
+html[dir="rtl"] .site-header .brand,
+html[dir="rtl"] #site-footer .footer-logo,
+html[dir="rtl"] .site-footer .footer-logo {
+  transform: none !important;
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* ==========================================
+   RTL RESPONSIVE ALIGNMENT FIX
+========================================== */
+
+html[dir="rtl"] body {
+  overflow-x: clip;
+}
+
+html[dir="rtl"] #site-header,
+html[dir="rtl"] #site-footer,
+html[dir="rtl"] main,
+html[dir="rtl"] section {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+html[dir="rtl"] #site-header .brand,
+html[dir="rtl"] .site-header .brand,
+html[dir="rtl"] #site-footer .footer-logo,
+html[dir="rtl"] .site-footer .footer-logo {
+  transform: none !important;
+  direction: ltr !important;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+/* Hero content */
+html[dir="rtl"] .hero-content,
+html[dir="rtl"] .hero-copy,
+html[dir="rtl"] .cta-band,
+html[dir="rtl"] .offers-final-cta {
+  text-align: right;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Footer columns */
+html[dir="rtl"] .footer-top,
+html[dir="rtl"] .footer-grid {
+  direction: rtl;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+html[dir="rtl"] .footer-col {
+  min-width: 0;
+  max-width: 100%;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+html[dir="rtl"] .footer-bottom {
+  direction: rtl;
+  flex-wrap: wrap;
+}
+
+/* Mobile layout */
+@media (max-width: 650px) {
+  html[dir="rtl"] #site-header .header-inner,
+  html[dir="rtl"] .site-header .header-inner {
+    direction: rtl;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    gap: 8px;
+  }
+
+  html[dir="rtl"] .header-actions {
+    flex-shrink: 0;
+    margin-inline: 0 !important;
+  }
+
+  html[dir="rtl"] .main-nav {
+    inset-inline: 0;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: right;
+  }
+
+  html[dir="rtl"] .footer-top,
+  html[dir="rtl"] .footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  html[dir="rtl"] .footer-brand,
+  html[dir="rtl"] .footer-brand p {
+    max-width: 100%;
+    text-align: right;
+  }
+
+  html[dir="rtl"] .social-links,
+  html[dir="rtl"] .socials {
+    justify-content: flex-start;
+  }
+}
+
+/* Fix missing tagline in mobile header */
+@media (max-width: 480px) {
+  #site-header .brand,
+  .site-header .brand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 7px !important;
+    min-width: 0;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  #site-header .brand-name,
+  .site-header .brand-name {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: baseline;
+    white-space: normal !important;
+    overflow: visible !important;
+    line-height: 1.1 !important;
+  }
+
+  #site-header .brand-tagline,
+  .site-header .brand-tagline {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: static !important;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 3px 0 0 !important;
+    font-size: 7px !important;
+    line-height: 1.4 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    color: inherit;
+  }
+}
+
+/* ==========================================
+   MOBILE ICON SIZE — LTR + RTL
+========================================== */
+
+@media (max-width: 480px) {
+  /* Header theme, RTL and menu controls */
+  #site-header .header-actions .icon-btn,
+  #site-header .theme-toggle,
+  #site-header .rtl-toggle,
+  #site-header .menu-toggle,
+  .site-header .header-actions .icon-btn,
+  .site-header .theme-toggle,
+  .site-header .rtl-toggle,
+  .site-header .menu-toggle {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    padding: 0 !important;
+    flex: 0 0 32px !important;
+    box-sizing: border-box;
+  }
+
+  /* Icons inside header controls */
+  #site-header .header-actions .icon-btn svg,
+  #site-header .theme-toggle svg,
+  #site-header .rtl-toggle svg,
+  #site-header .menu-toggle svg,
+  .site-header .header-actions .icon-btn svg,
+  .site-header .theme-toggle svg,
+  .site-header .rtl-toggle svg,
+  .site-header .menu-toggle svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  /* Footer social buttons */
+  #site-footer .socials a,
+  #site-footer .social-links a,
+  .site-footer .socials a,
+  .site-footer .social-links a {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    min-height: 34px !important;
+    padding: 0 !important;
+    flex: 0 0 34px !important;
+    box-sizing: border-box;
+  }
+
+  /* Footer social icons */
+  #site-footer .socials svg,
+  #site-footer .social-links svg,
+  .site-footer .socials svg,
+  .site-footer .social-links svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  /* Keep social icons evenly spaced */
+  #site-footer .socials,
+  #site-footer .social-links,
+  .site-footer .socials,
+  .site-footer .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px !important;
+  }
+}
+
+/* Extra-small phones */
+@media (max-width: 360px) {
+  #site-header .header-actions .icon-btn,
+  #site-header .theme-toggle,
+  #site-header .rtl-toggle,
+  #site-header .menu-toggle,
+  .site-header .header-actions .icon-btn,
+  .site-header .theme-toggle,
+  .site-header .rtl-toggle,
+  .site-header .menu-toggle {
+    width: 29px !important;
+    height: 29px !important;
+    min-width: 29px !important;
+    min-height: 29px !important;
+    flex-basis: 29px !important;
+  }
+
+  #site-footer .socials a,
+  #site-footer .social-links a,
+  .site-footer .socials a,
+  .site-footer .social-links a {
+    width: 31px !important;
+    height: 31px !important;
+    min-width: 31px !important;
+    min-height: 31px !important;
+    flex-basis: 31px !important;
+  }
+}
+
+/* Mobile RTL: align header and footer branding to the right edge */
+@media (max-width: 480px) {
+  html[dir="rtl"] #site-header .brand,
+  html[dir="rtl"] .site-header .brand,
+  html[dir="rtl"] #site-footer .footer-logo,
+  html[dir="rtl"] .site-footer .footer-logo {
+    direction: ltr !important;
+    transform: none !important;
+    margin-left: auto !important;
+  
+    width: fit-content !important;
+    max-width: calc(100% - 28px) !important;
+    box-sizing: border-box;
+  }
+}
+
+/* ==========================================
+   NAIL PIGMENT — RTL BRAND ORDER
+   ALL PAGES | HEADER + FOOTER
+   DESKTOP | TABLET | MOBILE
+========================================== */
+
+/* LTR: logo first, website name second */
+html:not([dir="rtl"]) #site-header .brand,
+html:not([dir="rtl"]) #site-footer .footer-logo {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  direction: ltr !important;
+  transform: none !important;
+}
+
+/* RTL: website name first, logo on the RIGHT */
+html[dir="rtl"] #site-header .brand,
+html[dir="rtl"] #site-footer .footer-logo {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  direction: ltr !important;
+  gap: 10px !important;
+  transform: none !important;
+}
+
+/* Keep Nail Pigment text in English word order */
+html[dir="rtl"] #site-header .brand-name,
+html[dir="rtl"] #site-footer .footer-logo .brand-name {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* Keep tagline under website name */
+html[dir="rtl"] #site-header .brand-tagline,
+html[dir="rtl"] #site-footer .footer-logo .brand-tagline {
+  display: block !important;
+  direction: ltr !important;
+  text-align: left !important;
+  visibility: visible !important;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  html[dir="rtl"] #site-header .brand,
+  html[dir="rtl"] #site-footer .footer-logo {
+    gap: 8px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  html[dir="rtl"] #site-header .brand,
+  html[dir="rtl"] #site-footer .footer-logo {
+    flex-direction: row-reverse !important;
+    gap: 6px !important;
+    transform: none !important;
+  }
+
+  html[dir="rtl"] #site-header .brand-logo,
+  html[dir="rtl"] #site-footer .footer-logo .brand-logo {
+    flex-shrink: 0 !important;
+  }
+}
+
+/* ==========================================
+   FINAL RTL BRAND ALIGNMENT
+   Header + Footer | All Pages | Responsive
+========================================== */
+
+/* LTR: logo first, name second */
+html[dir="ltr"] .site-header .brand,
+html[dir="ltr"] .site-footer .footer-logo {
+  flex-direction: row !important;
+  gap: 8px !important;
+  transform: none !important;
+}
+
+/* RTL: name first, logo immediately to its RIGHT */
+html[dir="rtl"] .site-header .brand,
+html[dir="rtl"] #site-header .brand,
+html[dir="rtl"] .site-footer .footer-logo,
+html[dir="rtl"] #site-footer .footer-logo {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  direction: ltr !important;
+  gap: 4px !important;
+  column-gap: 4px !important;
+  transform: none !important;
+  margin: 0 !important;
+  min-width: 0;
+}
+
+/* Remove unwanted space around the logo */
+html[dir="rtl"] .site-header .brand-logo,
+html[dir="rtl"] .site-footer .footer-logo .brand-logo {
+  display: block;
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Keep the website name and tagline together */
+html[dir="rtl"] .site-header .brand-name,
+html[dir="rtl"] .site-footer .footer-logo .brand-name {
+  margin: 0 !important;
+  padding: 0 !important;
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  html[dir="rtl"] .site-header .brand,
+  html[dir="rtl"] #site-header .brand,
+  html[dir="rtl"] .site-footer .footer-logo,
+  html[dir="rtl"] #site-footer .footer-logo {
+    gap: 3px !important;
+    column-gap: 3px !important;
+  }
+}
+
+/* =========================================
+   NAIL PIGMENT — STICKY RESPONSIVE HEADER
+========================================= */
+
+.site-header,
+.main-header,
+header.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Keep header background solid while scrolling */
+.site-header,
+.main-header,
+header.site-header {
+  background: var(--surface, #FFF5F7);
+}
+
+/* Prevent header contents from overflowing */
+.site-header .header-inner,
+.main-header .header-inner,
+.site-header .nav-container,
+.main-header .nav-container {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Tablet and mobile */
+@media (max-width: 768px) {
+  .site-header,
+  .main-header,
+  header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+  }
+
+  .site-header .header-inner,
+  .main-header .header-inner,
+  .site-header .nav-container,
+  .main-header .nav-container {
+    flex-wrap: nowrap;
+    min-width: 0;
+  }
+}
+
+/* Dark mode */
+html[data-theme="dark"] .site-header,
+html[data-theme="dark"] .main-header,
+html[data-theme="dark"] header.site-header {
+  background: var(--surface, #171317);
+}
+
+/* =========================================
+   NAIL PIGMENT — BERRY PINK MENU ICONS
+========================================= */
+
+:root {
+  --menu-berry-pink: #E75480;
+}
+
+/* Hamburger button */
+.menu-toggle,
+.hamburger,
+.mobile-menu-toggle,
+.nav-toggle,
+button[aria-label*="menu" i],
+button[aria-label*="navigation" i] {
+  color: var(--menu-berry-pink) !important;
+}
+
+/* Hamburger lines */
+.menu-toggle span,
+.hamburger span,
+.mobile-menu-toggle span,
+.nav-toggle span,
+.menu-toggle::before,
+.menu-toggle::after,
+.hamburger::before,
+.hamburger::after,
+.mobile-menu-toggle::before,
+.mobile-menu-toggle::after,
+.nav-toggle::before,
+.nav-toggle::after {
+  background-color: var(--menu-berry-pink) !important;
+  border-color: var(--menu-berry-pink) !important;
+}
+
+/* SVG or icon-based hamburger and close icons */
+.menu-toggle svg,
+.hamburger svg,
+.mobile-menu-toggle svg,
+.nav-toggle svg,
+.menu-toggle svg *,
+.hamburger svg *,
+.mobile-menu-toggle svg *,
+.nav-toggle svg * {
+  color: var(--menu-berry-pink) !important;
+  stroke:  #a73c60 !important;
+}
+
+/* Close button */
+.menu-close,
+.close-menu,
+.mobile-menu-close,
+.nav-close,
+button[aria-label*="close" i],
+button[aria-label*="dismiss" i] {
+  color: var(--menu-berry-pink) !important;
+}
+
+/* Close icon made with CSS borders */
+.menu-close::before,
+.menu-close::after,
+.close-menu::before,
+.close-menu::after,
+.mobile-menu-close::before,
+.mobile-menu-close::after,
+.nav-close::before,
+.nav-close::after {
+  background-color: var(--menu-berry-pink) !important;
+  border-color: var(--menu-berry-pink) !important;
+}
+
+/* Hover and keyboard focus */
+.menu-toggle:hover,
+.hamburger:hover,
+.mobile-menu-toggle:hover,
+.nav-toggle:hover,
+.menu-close:hover,
+.close-menu:hover,
+.mobile-menu-close:hover,
+.nav-close:hover {
+  color: var(--menu-berry-pink) !important;
+}
+
+.menu-toggle:focus-visible,
+.hamburger:focus-visible,
+.mobile-menu-toggle:focus-visible,
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--menu-berry-pink);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   NAIL PIGMENT — BOOK APPOINTMENT HOVER FIX
+   Shared across all pages
+========================================= */
+
+#site-header a,
+#site-header button {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+#site-header a.btn-primary:hover,
+#site-header a.btn-primary:focus-visible,
+#site-header a.book-appointment:hover,
+#site-header a.book-appointment:focus-visible,
+#site-header .book-appointment-btn:hover,
+#site-header .book-appointment-btn:focus-visible {
+  background: #c93e6b !important;
+  border-color: #c93e6b !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+#site-header a.btn-primary:hover *,
+#site-header a.book-appointment:hover *,
+#site-header .book-appointment-btn:hover * {
+  color: #ffffff !important;
+}
+
+#site-header a.btn-primary:active,
+#site-header a.book-appointment:active,
+#site-header .book-appointment-btn:active {
+  background: #9e234e !important;
+  border-color: #9e234e !important;
+  color: #ffffff !important;
+  transform: translateY(0);
+}
