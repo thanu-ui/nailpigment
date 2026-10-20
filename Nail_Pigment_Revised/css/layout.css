@@ -1695,7 +1695,7 @@ button[class*="-btn"] {
   .site-header .mobile-book {
     display: inline-flex;
     align-self: center;
-    width: fit-content;
+    width: 100%;
     margin-top: 10px;
   }
 }
